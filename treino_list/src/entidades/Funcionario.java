@@ -1,5 +1,6 @@
 package entidades;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Funcionario {
@@ -8,6 +9,8 @@ public class Funcionario {
 	private String nome;
 	private Date dataNascimento;
 	private double salario;
+	
+	SimpleDateFormat dataFormatada = new SimpleDateFormat("dd/MM/yyyy");
 	
 	public Funcionario() {
 	}
@@ -47,7 +50,10 @@ public class Funcionario {
 		return salario;
 	}
 
-	
+	public String toString() {
+		return id + ", " + nome + ", " + dataFormatada.format(dataNascimento)
+		+ ", $" + String.format("%.2f", salario);
+	}
 	
 	
 	
